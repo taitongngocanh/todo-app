@@ -10,3 +10,7 @@ spring:
       ddl-auto: update
     show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+jwt:
+  secret: mySecretKeyForJWTTokenGeneration12345678901234567890
+  expiration: 86400000 # 24 hours in milliseconds
