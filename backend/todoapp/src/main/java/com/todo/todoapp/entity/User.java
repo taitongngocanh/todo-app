@@ -3,6 +3,7 @@ package com.todo.todoapp.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -26,7 +27,7 @@ public class User {
     private String fullName;
 
     @Column(name = "date_of_birth")
-    private Date dob;
+    private LocalDate dob;
 
     @Column(nullable = false)
     private boolean status;
