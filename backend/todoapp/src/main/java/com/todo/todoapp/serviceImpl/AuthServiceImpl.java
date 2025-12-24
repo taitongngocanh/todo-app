@@ -23,6 +23,7 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public AuthResponse register(RegisterRequest request) {
+
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new RuntimeException("Email already exists");
         }
@@ -71,7 +72,7 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public void logout(String token) {
-        if (token != null && token.startsWith("Bear ")) {
+        if (token != null && token.startsWith("Bearer ")) {
             String jwtToken = token.substring(7);
             jwtUtil.validateToken(jwtToken, jwtUtil.extractEmail(jwtToken));
         }
